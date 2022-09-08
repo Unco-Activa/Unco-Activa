@@ -23,6 +23,6 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 Route::get('/categories', [RaceCategorieController::class, 'index']);
 
 Route::controller(InscriptionController::class)->group(function () {
-    Route::get('/inscriptions', [InscriptionController::class, 'index']);
+    Route::get('/inscriptions', 'index');
     Route::post('/inscription', 'store');
 });

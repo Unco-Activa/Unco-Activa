@@ -1,7 +1,7 @@
 import ApplicationLogo from 'components/ApplicationLogo'
 import Dropdown from 'components/Dropdown'
 import ResponsiveNavLink, { ResponsiveNavButton } from 'components/ResponsiveNavLink'
-import { DropdownButton } from 'components/DropdownLink'
+import DropdownLink, { DropdownButton } from 'components/DropdownLink'
 import { useAuth } from 'hooks/auth'
 import { useState } from 'react'
 import CustomNavLink from 'components/NavLink';
@@ -58,6 +58,11 @@ const Navigation = ({ user }) => {
                     </div>
                   </button>
                 }>
+                <DropdownLink
+                  to="/Pre-inscripciones"
+                >
+                  Pre-inscripciones
+                </DropdownLink>
                 {/* Authentication */}
                 <DropdownButton onClick={logout}>
                   Cerrar Sesion
@@ -172,6 +177,11 @@ const Navigation = ({ user }) => {
                     to="/"
                   >
                     Home
+                  </ResponsiveNavLink>
+                  <ResponsiveNavLink
+                    to="/Pre-inscripciones"
+                  >
+                    Pre-inscripciones
                   </ResponsiveNavLink>
                   {/* Authentication */}
                   <ResponsiveNavButton onClick={logout}>

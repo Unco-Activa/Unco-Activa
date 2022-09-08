@@ -8,6 +8,7 @@ import ForgotPassword from 'pages/forgot-password';
 import PasswordReset from 'pages/password-reset';
 import NotFoundPage from 'pages/404';
 import PreinscriptionForm from 'pages/PreinscriptionForm';
+import PreInscriptions from 'pages/Pre-inscriptions';
 import axios from 'axios'
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
                         path={'/inscribirse/' + categorie.name} />
 
                     ))}
+        <Route path="/Pre-inscripciones" element={<PreInscriptions />} />
         <Route path="*" element={<NotFoundPage />}
 
         />
