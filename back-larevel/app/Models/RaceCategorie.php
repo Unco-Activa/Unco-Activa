@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class RaceCategorie extends Model
 {
     use HasFactory;
+
+    public function inscriptions()
+    {
+        return $this->hasOne('App\Models\Inscription');
+    }
 }

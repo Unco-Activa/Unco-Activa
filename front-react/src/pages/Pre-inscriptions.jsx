@@ -13,58 +13,60 @@ const PreInscriptions = () => {
     await axios.get(`${endpoint}/inscriptions`)
       .then(function (response) {
         setPreInscriptions(response.data)
+        console.log(response.data)
       })
       .catch(function (error) {
-        console.error('error', error.response);
+        console.log(error);
       });
   }
   return (
     <AppLayout>
-      <div className='min-h-screen py-7 px-2 sm:px-10'>
-        <div className='grid justify-center bg-gray rounded-lg'>
+      <>
+      <div className='h-screen py-7 px-2 sm:px-10 md:px-10 xl:px-32'>
+        <div className='grid justify-center bg-gray rounded-lg pb-2'>
           <h1 className='flex justify-center text-[1.5rem] sm:text-[2rem] font-Hurme-Geometric-BO text-blue-dark py-5'>PRE-INSCRIPCIONES</h1>
-          <div className='overflow-x-scroll pb-5'>
+          <div className='overflow-x-auto pb-5'>
             <table className='font-Hurme-Geometric-N '>
               <thead>
                 <tr className='font-Hurme-Geometric-BO text-blue-dark'>
-                  <th>#</th>
-                  <th>#CATEGORIA</th>
-                  <th>NOMBRE APELLIDO</th>
-                  <th>DNI</th>
-                  <th>TELEFONO</th>
-                  <th>EMAIL</th>
-                  <th>DIRECCION</th>
-                  <th>CIUDAD</th>
-                  <th>OPCIONES</th>
+                  <th className='px-3'>#</th>
+                  <th className='px-3'>#CATEGORIA</th>
+                  <th className='px-3'>NOMBRE APELLIDO</th>
+                  <th className='px-3'>DNI</th>
+                  <th className='px-3'>TELEFONO</th>
+                  <th className='px-3'>EMAIL</th>
+                  <th className='px-3'>DIRECCION</th>
+                  <th className='px-3'>CIUDAD</th>
+                  <th className='px-3'>OPCIONES</th>
                 </tr>
               </thead>
               <tbody>
                 {PreInscriptions.map((PreInscription) => (
                   <>
                     {!PreInscription.billing_verified_at ?
-                      <tr key={PreInscription.id}>
+                      <tr key={PreInscription.unic}>
                         <td className='px-3'>
                           {PreInscription.id}
                         </td>
-                        <td className='px-3' key={PreInscription.race_categorie_id}>
-                          {PreInscription.race_categorie_id}
+                        <td className='px-3' >
+                          {PreInscription.categorie_name}
                         </td>
-                        <td className='px-3'>
+                        <td className='px-3' >
                           {PreInscription.name} {PreInscription.surname}
                         </td>
-                        <td className='px-3 py-1'>
+                        <td className='px-3 py-1' >
                           {PreInscription.dni}
                         </td>
-                        <td className='px-3'>
+                        <td className='px-3' >
                           {PreInscription.phone}
                         </td>
-                        <td className='px-3' key={PreInscription}>
+                        <td className='px-3' >
                           {PreInscription.email}
                         </td>
                         <td className='px-3'>
                           {PreInscription.address}
                         </td>
-                        <td className='px-3'>
+                        <td className='px-3' >
                           {PreInscription.city}
                         </td>
                         <td className='px-3'>
@@ -81,7 +83,70 @@ const PreInscriptions = () => {
             </table>
           </div>
         </div>
+        <div className='grid justify-center bg-gray rounded-lg pb-2 my-7'>
+          <h1 className='flex justify-center text-[1.5rem] sm:text-[2rem] font-Hurme-Geometric-BO text-blue-dark py-5'>INSCRIPCIONES</h1>
+          <div className='overflow-x-auto pb-5'>
+            <table className='font-Hurme-Geometric-N '>
+              <thead>
+                <tr className='font-Hurme-Geometric-BO text-blue-dark'>
+                  <th className='px-3'>#</th>
+                  <th className='px-3'>#CATEGORIA</th>
+                  <th className='px-3'>NOMBRE APELLIDO</th>
+                  <th className='px-3'>DNI</th>
+                  <th className='px-3'>TELEFONO</th>
+                  <th className='px-3'>EMAIL</th>
+                  <th className='px-3'>DIRECCION</th>
+                  <th className='px-3'>CIUDAD</th>
+                  <th className='px-3'>OPCIONES</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PreInscriptions.map((PreInscription) => (
+                  <>
+                    {PreInscription.billing_verified_at ?
+                      <tr key={PreInscription.unic}>
+                        <td className='px-3'>
+                          {PreInscription.id}
+                        </td>
+                        <td className='px-3' >
+                          {PreInscription.categorie_name}
+                        </td>
+                        <td className='px-3' >
+                          {PreInscription.name} {PreInscription.surname}
+                        </td>
+                        <td className='px-3' >
+                          {PreInscription.dni}
+                        </td>
+                        <td className='px-3' >
+                          {PreInscription.phone}
+                        </td>
+                        <td className='px-3' >
+                          {PreInscription.email}
+                        </td>
+                        <td className='px-3'>
+                          {PreInscription.address}
+                        </td>
+                        <td className='px-3' >
+                          {PreInscription.city}
+                        </td>
+                        {/* <td className='px-3'>
+                          <button className='bg-yellow mx-1 px-2 my-1 rounded-full'>aceptar</button>
+                          <button className='bg-board text-gray-light mx-1 px-2 my-1 rounded-full'>rechazar</button>
+                        </td> */}
+                      </tr>
+                      :
+                      <tr></tr>
+                    }
+                  </>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      
       </div>
+      
+      </>
     </AppLayout>
   )
 }

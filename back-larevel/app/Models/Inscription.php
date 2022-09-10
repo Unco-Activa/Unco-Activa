@@ -34,4 +34,9 @@ class Inscription extends Model
     protected $casts = [
         'billing_verified_at' => 'datetime',
     ];
+
+    public function raceCategorie()
+    {
+        return $this->belongsTo('App\Models\RaceCategorie');
+    }
 }

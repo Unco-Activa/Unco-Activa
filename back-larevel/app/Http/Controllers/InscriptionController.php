@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\PreInscriptionMail;
 use App\Models\Inscription;
 use App\Models\RaceCategorie;
-use Illuminate\Http\Request;
+use Illuminiate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -20,7 +20,9 @@ class InscriptionController extends Controller
      */
     public function index()
     {
-        return Inscription::all();
+        $preInscriptions = Inscription::join('race_categories', 'race_categories.id', '=', 'inscriptions.race_categorie_id')
+        ->get( ['inscriptions.*', 'race_categories.name as categorie_name']);
+        return $preInscriptions;
     }
 
     /**
