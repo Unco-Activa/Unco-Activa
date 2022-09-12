@@ -70,8 +70,12 @@ const PreInscriptions = () => {
                           {PreInscription.city}
                         </td>
                         <td className='px-3'>
-                          <button className='bg-yellow mx-1 px-2 my-1 rounded-full'>aceptar</button>
-                          <button className='bg-board text-gray-light mx-1 px-2 my-1 rounded-full'>rechazar</button>
+                          <form>
+                            <button className='bg-yellow mx-1 px-2 my-1 rounded-full'>aceptar</button>
+                          </form>
+                          <form>
+                            <button className='bg-board text-gray-light mx-1 px-2 my-1 rounded-full'>rechazar</button>
+                          </form>
                         </td>
                       </tr>
                       :

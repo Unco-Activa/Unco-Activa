@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\PreInscriptionMail;
 use App\Models\Inscription;
 use App\Models\RaceCategorie;
-use Illuminiate\Http\Request;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
@@ -115,7 +115,9 @@ class InscriptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $inscription = Inscription::find($id);
+        $inscription->billing_verified_at = date('Y-m-d');
+        $inscription->save();
     }
 
     /**
