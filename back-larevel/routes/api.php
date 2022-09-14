@@ -25,4 +25,6 @@ Route::get('/categories', [RaceCategorieController::class, 'index']);
 Route::controller(InscriptionController::class)->group(function () {
     Route::get('/inscriptions', 'index');
     Route::post('/inscription', 'store');
+    Route::post('/inscription/{id}', 'update');
+    Route::delete('/inscription/{id}', 'destroy');
 });

@@ -116,8 +116,13 @@ class InscriptionController extends Controller
     public function update(Request $request, $id)
     {
         $inscription = Inscription::find($id);
-        $inscription->billing_verified_at = date('Y-m-d');
-        $inscription->save();
+        if($inscription->billing_verified_at){
+            $inscription->billing_verified_at = NULL;
+            $inscription->save();
+        }else{
+            $inscription->billing_verified_at = date('Y-m-d');
+            $inscription->save();
+        }
     }
 
     /**
@@ -128,6 +133,7 @@ class InscriptionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $inscription = Inscription::destroy($id);
+        return $inscription;
     }
 }
