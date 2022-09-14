@@ -9,6 +9,15 @@ class RaceCategorie extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'description',
+        'color',
+        'price',
+        'participants',
+        'quotas'
+    ];
+    
     public function inscriptions()
     {
         return $this->hasOne('App\Models\Inscription');

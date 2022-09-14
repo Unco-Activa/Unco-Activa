@@ -116,12 +116,21 @@ class InscriptionController extends Controller
     public function update(Request $request, $id)
     {
         $inscription = Inscription::find($id);
+        $idCategorie = $inscription->race_categorie_id;
+        $categorie = RaceCategorie::find($idCategorie);
+
         if($inscription->billing_verified_at){
-            $inscription->billing_verified_at = NULL;
-            $inscription->save();
+            $categorie->quotas = $categorie->quotas + 1;
+            if($categorie->save()){
+                $inscription->billing_verified_at = NULL;
+                $inscription->save();
+            };
         }else{
-            $inscription->billing_verified_at = date('Y-m-d');
-            $inscription->save();
+            $categorie->quotas = $categorie->quotas - 1;
+            if($categorie->save()){
+                $inscription->billing_verified_at = date('Y-m-d');
+                $inscription->save();
+            };
         }
     }
 
