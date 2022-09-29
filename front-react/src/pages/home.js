@@ -12,7 +12,7 @@ const mockImagenes = [
   'elements/FLYERS 4.jpg'
 ]
 
-function Home(categories, setcategories){
+function Home(categories, setcategories) {
 
   return (
     <AppLayout>
@@ -25,7 +25,7 @@ function Home(categories, setcategories){
             <div className='flex justify-center pt-5'>
               <Slider imagenes={mockImagenes} className='bg-white' />
             </div>
-                    
+
             <div id='conoceMas' className='text-[1.8rem] text-center p-5 font-Hurme-Geometric-BO text-blue-dark'>
               <h1 className=''>22 OCT / 11 HRS</h1>
               <h1>Sede Central - Neuquén Capital</h1>
@@ -68,10 +68,10 @@ function Home(categories, setcategories){
                   </ul>
 
                   <p className='pt-2'><span className='font-Hurme-Geometric-N'>Incluye: </span>
-                                    Derecho a participación / Remera técnica / servicios de control / servicio de hidratación seguro de corredor.
+                    Derecho a participación / Remera técnica / servicios de control / servicio de hidratación seguro de corredor.
                   </p>
                   <p className='pt-1'><span className='font-Hurme-Geometric-N'>ATENCIÓN COMUNIDAD UNIVERSITARIA: </span>
-                                Presentado certificado de alumno regular, y en el caso de docentes y no docentes mediante número de legajo, acceden a precios promocionales. Enviar email a uncoactiva@gmail.com para recibir dicho beneficio.
+                    Presentado certificado de alumno regular, y en el caso de docentes y no docentes mediante número de legajo, acceden a precios promocionales. Enviar email a uncoactiva@gmail.com para recibir dicho beneficio.
                   </p>
                   <ul className='list-disc pl-5 pt-2'>
                     <li>25km tiene un costo de $4000 por participante.</li>
@@ -83,7 +83,7 @@ function Home(categories, setcategories){
                                 <p>Tanto el recorrido de los 25km como el de 15km, será por senderos de barda y calles.  El recorrido de los 7km será por barda pero de dificultad baja. Y por último, los 3km de la caminata será por senderos accesibles casi sin desnivel.</p> */}
                   <h4 className="text-[1.2rem] text-blue-high font-bold py-5 font-Hurme-Geometric-BO">MODO DE INSCRIPCIÓN:</h4>
                   <p className=''>Las inscripciones se realizan vía Internet en la web:
-                                    Pago únicamente por transferencia:</p>
+                    Pago únicamente por transferencia:</p>
                   <ul className='list-none py-3'>
                     <li className='font-Hurme-Geometric-N'>Banco Credicoop Cooperativo Limitado</li>
                     <li><span className='font-Hurme-Geometric-N'>Adherente:</span> Universidad Nacional del Comahue.</li>
@@ -93,11 +93,33 @@ function Home(categories, setcategories){
                   </ul>
                   <p className='text-blue-high text-[1.2rem] font-Hurme-Geometric-BO'>Se deberá enviar de manera obligatoria el comprobante de transferencia con todos los datos de la operación al mail <span className='text-board'>uncoactiva@gmail.com</span>
                   </p>
+
                 </div>
               </div>
             </div>
+            <h1 class="text-center text-[2rem] mt-20 md:text-[2.5rem] font-Hurme-Geometric-BO text-blue-dark" fill="currentColor">
+              SPONSORS
+            </h1>
+            <div className='grid lg:grid-cols-4  items-center justify-center p-5'>
+              <img width='100%' className='col-span-4 lg:col-span-2 h-24 md:h-[180px]' alt='logo deporte y gob' src={'/logos/logo-deporte-y-gob.svg'} />
+              <img width='50%' alt='logo ijan' className='col-span-2 justify-self-center  lg:mt-0 lg:col-span-1 j w-24 md:w-[120px] lg:ml-5 mt-5 h-24 md:h-[180px]' src={'/logos/logo-ijan.svg'} />
+              <img className='col-span-2 lg:col-span-1  h-18 mt-5 lg:m-0' alt='logo muni' src={'/logos/logo-muni.png'} />
+            </div>
+            <div className='grid justify-center pb-5'>
+              <h1 class="text-center text-[2rem]  md:text-[2.5rem] font-Hurme-Geometric-BO text-blue-dark" fill="currentColor">
+                ORGANIZADORES
+              </h1>
+
+              <div className='grid grid-cols-3 gap-5 items-center justify-center p-5'>
+                <img className='col-span-1 h-24 md:h-[180px] justify-self-end' alt='logo ijan' src={'/logos/Logo Dirección de Deportes y Recreación 4-10.png'} />
+                <img className='col-span-1 h-24 md:h-[180px] justify-self-center ' alt='logo ijan' src={'/logos/LOGO UNCO PNG.png'} />
+                <img className='col-span-1 h-24 md:h-[180px] justify-self-start bg-gray-darker' alt='logo ijan' src={'/logos/Secretaría de Bienestar Universitario-02.png'} />
+              </div>
+            </div>
           </div>
+
         </div>
+
       </div>
     </AppLayout>
   );
