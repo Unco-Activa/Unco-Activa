@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('pages.index');
 })->name('index');
 
+Route::get('/send-emails', [EmailController::class, 'sendEmail'])->name('send-emails');
 
 
 
@@ -30,8 +31,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/inscription/{id}', [InscriptionController::class, 'update']);
     Route::get('/inscriptionDelete/{id}', [InscriptionController::class, 'edit']);
     Route::get('/inscripciones/export', [InscriptionController::class, 'exportAllInscriptions'])->name('inscriptions.export');
-    
-    Route::get('/send-emails', [EmailController::class, 'sendEmail'])->name('send-emails');
 });
 
 //Log User Out

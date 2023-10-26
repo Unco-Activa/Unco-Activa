@@ -164,12 +164,13 @@ const Home = () => {
                             ORGANIZADORES
                         </h1>
 
-                        <div id="racePath" className="grid grid-cols-4 gap-5 items-center justify-center p-5">
+                        <div id="racePath" className="grid grid-cols-5 gap-4 items-center justify-center p-5">
                             <img className="col-span-1 h-24 md:h-[180px] justify-self-end" alt="Dirección de deportes y recreación" src={"/logos/Logo Dirección de Deportes y Recreación 4-10.png"} />
                             <img className="col-span-1 h-24 md:h-[180px] justify-self-center " alt="Unco" src={"/logos/LOGO UNCO PNG.png"} />
 
                             <img className="col-span-1 h-24 md:h-[180px] justify-self-start bg-gray-darker" alt="Secretaria de Bienestar Universitario" src={"/logos/Secretaria_de_bienestar_universitario.png"} />
                             <img className="col-span-1 h-24 md:h-[180px] justify-self-start bg-gray-darker" alt="logo deportes" src={"/logos/logo_deporte.png"} />
+                            <img className="col-span-1 h-24 md:h-[180px] justify-self-start bg-gray-darker" alt="logo anaar" src={"/logos/Anaar.png"} />
                         </div>
                         <div></div>
                     </div>
