@@ -24,7 +24,10 @@ class InscriptionsExport implements FromCollection, ShouldAutoSize, WithHeadings
             'inscriptions.birth',
             'inscriptions.dni',
             'inscriptions.phone',
-            'inscriptions.email'
+            'inscriptions.email',
+            'inscriptions.gender',
+            'inscriptions.emergency_contact_phone',
+            'inscriptions.shirt_size'
         ]);
     }
 
@@ -39,6 +42,9 @@ class InscriptionsExport implements FromCollection, ShouldAutoSize, WithHeadings
             'DNI',
             'TELEFONO',
             'EMAIL',
+            'GENERO',
+            'EMERGENCIA',
+            'TALLE',
         ];
     }
 }

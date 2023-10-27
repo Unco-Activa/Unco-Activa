@@ -33,6 +33,7 @@
               <th class='px-3'>TELEFONO</th>
               <th class='px-3'>ARCHIVOS</th>
               <th class='px-3'>EMAIL</th>
+              <th class='px-3'>GENERO</th>
               <th class='px-3'>OPCIONES</th>
             </tr>
           </thead>
@@ -80,6 +81,9 @@
                   </td>
                   <td class='px-3' >
                     {{$inscription->email}}
+                  </td>
+                  <td class='px-3' >
+                    {{$inscription->gender}}
                   </td>
                   <td class='flex justify-center px-3'>
                     <a href="inscription/{{$inscription->id}}">
