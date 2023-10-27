@@ -21,7 +21,7 @@ class InscriptionController extends Controller
      */
     public function index()
     {
-        $preInscriptions = Inscription::where('billing_verified_at', null )->where('verification_denied', null )->filter(request(['search']))->paginate(10);
+        $preInscriptions = Inscription::where('billing_verified_at', null )->where('verification_denied', null )->filter(request(['search']))->paginate(30);
         $categories = RaceCategorie::all();
 
         return view('pages.pre-inscriptions', ['preInscriptions' => $preInscriptions, 'categories' => $categories]);
@@ -34,14 +34,14 @@ class InscriptionController extends Controller
         ->get(['inscriptions.*', 'race_categories.name as categorie_name']); */
         // dd($test);
 
-        $inscriptions = Inscription::where('billing_verified_at', '!=', null )->where('verification_denied', null )->filter(request(['search']))->paginate(10);
+        $inscriptions = Inscription::where('billing_verified_at', '!=', null )->where('verification_denied', null )->filter(request(['search']))->paginate(30);
         $inscriptionCategories = RaceCategorie::all();
         return view('pages.inscriptions', ['inscriptions' => $inscriptions, 'inscriptionCategories' => $inscriptionCategories]);
     }
 
     public function indexDeniedInscriptions()
     {
-        $DeniedInscriptions = Inscription::where('verification_denied', '!=', null )->paginate(10);
+        $DeniedInscriptions = Inscription::where('verification_denied', '!=', null )->paginate(30);
         $inscriptionCategories = RaceCategorie::all();
         return view('pages.denied-inscriptions', ['DeniedInscriptions' => $DeniedInscriptions, 'inscriptionCategories' => $inscriptionCategories]);
     }
